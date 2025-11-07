@@ -1094,30 +1094,9 @@ window.onload = () => {
         }
         // --- FIN FUNCIONES MODULARES PARA EL LOADER ---
 
-        // --- INTEGRACIÓN CON EL EVENTO DE CARGA ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // En un proyecto real, aquí iría tu código de inicialización principal.
-            // Para este ejemplo, simplemente cargamos el tema y ocultamos el loader.
 
-            // Función para simular una carga, en un proyecto real la quitarías
-            function simulatePageLoad() {
-                return new Promise(resolve => {
-                    setTimeout(() => {
-                        console.log("Página cargada (simulado).");
-                        resolve();
-                    }, 3000); // Simula 3 segundos de carga
-                });
-            }
-
-            // Muestra el loader al inicio (ya está visible por defecto en HTML/CSS)
-            // Simula la carga de la página y luego oculta el loader
-            simulatePageLoad().then(() => {
-                
-            });
-
-            // Si tienes un evento window.addEventListener('load', ...) en tu proyecto principal,
-            // puedes llamar a hideLoader() ahí. Para este ejemplo, el setTimeout es más directo.
-            // window.addEventListener('load', window.hideLoader); // Descomentar en tu proyecto real
+        window.addEventListener('load', function() {
+            window.hideLoader();
         });
     </script>
 
