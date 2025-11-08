@@ -393,7 +393,7 @@
         </p>
         
         <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-800 p-4 rounded-lg shadow-inner inline-block text-left max-w-md mx-auto">
-            <p class="font-bold text-lg mb-1">📅 Fecha: Viernes, 13 de diciembre de 2025</p>
+            <p class="font-bold text-lg mb-1">📅 Fecha: Sábado, 13 de diciembre de 2025</p>
             <p class="font-bold text-lg mb-1">⏰ Hora: 03:00 p.m.</p>
             
             <p class="font-bold text-lg location-line">
@@ -431,8 +431,11 @@
 
           <div class="bg-white rounded-2xl shadow-lg p-4 md:p-5 fade-up">
             <p id="status-message" class="text-sm text-gray-600 mb-3"></p>
+            <button id="btn-maps" class="mt-3 w-full bg-[#E21B23] text-white text-xs font-semibold py-2 rounded-full transition hover:bg-red-700">
+                        Ir a Google Maps
+              </button>
             <div id="map"></div>
-              <button id="btn-maps" class="mt-3 w-full bg-[#E21B23] text-white text-xs font-semibold py-2 rounded-full transition hover:bg-red-700">
+              <button id="btn-maps2" class="mt-3 w-full bg-[#E21B23] text-white text-xs font-semibold py-2 rounded-full transition hover:bg-red-700">
                         Ir a Google Maps
               </button>
           </div>
@@ -1028,6 +1031,7 @@ function tareaDelIntervalo() {
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtén el botón usando su ID
     const mapsButton = document.getElementById('btn-maps');
+    const mapsButton2 = document.getElementById('btn-maps');
 
     // La dirección del destino, codificada para URL (espacios por +)
     const destinoCodificado = "Salón+De+Fiestas+Cantoya+en+Joaquín+de+La+Cantoya+y+Rico+100,+Jardines+de+Guadalupe,+58140+Morelia,+Mich.";
@@ -1043,7 +1047,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Abre el URL de indicaciones en una nueva pestaña
             window.open(directionsUrl, '_blank');
         });
-        console.log("Botón de Maps configurado para mostrar ruta desde ubicación.");
+    }
+
+      if (mapsButton2) {
+        mapsButton2.addEventListener('click', () => {
+            // Abre el URL de indicaciones en una nueva pestaña
+            window.open(directionsUrl, '_blank');
+        });
     }
 });
 
